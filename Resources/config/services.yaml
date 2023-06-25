@@ -1,0 +1,10 @@
+parameters:
+  sparkline.twig_extension.class: OncologySupport\Sparkline\Twig\SparklineExtension
+
+services:
+  sparkline_bundle.twig.sparkline_extension:
+    class: "%sparkline.twig_extension.class%"
+    tags:
+        - { name: twig.extension }
+    arguments:
+      [ '@service_container' ]
