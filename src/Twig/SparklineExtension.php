@@ -24,11 +24,6 @@ class SparklineExtension extends AbstractExtension
         );
     }
 
-    public function getName()
-    {
-        return 'sparkline_extension';
-    }
-
     /**
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
