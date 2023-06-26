@@ -1,8 +1,8 @@
-# SparklineBundle
+# Sparkline Bundle
 
-`SparklineBundle` eases the use of the Davaxi/Sparkline php library in your Symfony application by
-providing Twig extensions and PHP objects to do the heavy lifting. The bundle uses the 
-[Sparkline libarary](https://github.com/davaxi/Sparkline).
+`SparklineBundle` eases the use of the excellent/handy
+[Davaxi/Sparkline php library](https://github.com/davaxi/Sparkline)
+in your Symfony application by providing a Twig extension to do the work.
 
 ## Documentation
 
@@ -54,12 +54,16 @@ passing an array of values that will be inserted into a sparkline graph. Note th
 the `|raw` pipe function! This is important.
 
 ```php
-    {{ sparkline(<array of data>)|raw }}
+// your twig template
+
+{{ sparkline(<array of data>)|raw }}
 ```
 
 For example, for dataset `[2,3,10,8,23,14,9,12,0,0,14]` the twig line:, 
 ```php
-    {{ sparkline([2,3,10,8,23,14,9,12,0,0,14])|raw }}
+// your twig template
+
+{{ sparkline([2,3,10,8,23,14,9,12,0,0,14])|raw }}
 ```
 
 will insert a sparkline image like so:
