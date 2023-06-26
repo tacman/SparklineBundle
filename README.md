@@ -57,4 +57,4 @@ the `|raw` pipe function! This is important.
     {{ sparkline([2,3,10,8,23,14,9,12,0,0,14])|raw }}
 ```
 
-This will generate a sparkline image like so: <img src="assets/testimage.svg" alt="sparkline" width=80>
+This will generate a sparkline image like so: <img src="assets/testimage.png" alt="sparkline" width=80>
