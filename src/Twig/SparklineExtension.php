@@ -10,13 +10,6 @@ use Twig\TwigFunction;
 
 class SparklineExtension extends AbstractExtension
 {
-    private $container;
-
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
-
     public function getFunctions()
     {
         return array(
@@ -24,12 +17,13 @@ class SparklineExtension extends AbstractExtension
         );
     }
 
-    /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
-     */
-    public function showSparkline()
+    public function sparkline(array $data): string
     {
-        $this->container->get(Sparkline::class)->display();
+        ob_start();
+        $sparkline = new Sparkline();
+        $sparkline->setData($data);
+        $sparkline->display();
+        $sparkline->destroy();
+        return '<img src="data:image/png;base64,'.base64_encode(ob_get_clean()).'" alt="sparkline"/>';
     }
 }
