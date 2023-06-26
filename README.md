@@ -54,7 +54,17 @@ passing an array of values that will be inserted into a sparkline graph. Note th
 the `|raw` pipe function! This is important.
 
 ```php
+    {{ sparkline(<array of data>)|raw }}
+```
+
+For example, for dataset `[2,3,10,8,23,14,9,12,0,0,14]` the twig line:, 
+```php
     {{ sparkline([2,3,10,8,23,14,9,12,0,0,14])|raw }}
 ```
 
-This will generate a sparkline image like so: <img src="assets/testimage.png" alt="sparkline" width=80>
+will insert a sparkline image like so:
+<img src="assets/testimage.png" alt="sparkline" width=80>
+
+In the future I may add the ability to pass options to modify the appearance of the graph.
+
+Enjoy!
