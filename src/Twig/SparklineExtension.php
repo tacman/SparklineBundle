@@ -13,7 +13,7 @@ class SparklineExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new TwigFunction('sparkline', [$this, 'showSparkline']),
+            new TwigFunction('sparkline', [$this, 'sparkline']),
         );
     }
 
