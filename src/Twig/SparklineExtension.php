@@ -10,11 +10,11 @@ use Twig\TwigFunction;
 
 class SparklineExtension extends AbstractExtension
 {
-    public function getFunctions()
+    public function getFunctions(): array
     {
-        return array(
+        return [
             new TwigFunction('sparkline', [$this, 'sparkline']),
-        );
+        ];
     }
 
     public function sparkline(array $data): string
