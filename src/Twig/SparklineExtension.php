@@ -17,11 +17,18 @@ class SparklineExtension extends AbstractExtension
         ];
     }
 
-    public function sparkline(array $data): string
+    public function sparkline(array $data, int $width = null, int $height = null): string
     {
         ob_start();
         $sparkline = new Sparkline();
         $sparkline->setData($data);
+        if ($width) {
+            $sparkline->setWidth($width);
+        }
+        if ($height) {
+            $sparkline->setHeight($height);
+        }
+
         $sparkline->display();
         $sparkline->destroy();
         return '<img src="data:image/png;base64,'.base64_encode(ob_get_clean()).'" alt="sparkline"/>';
