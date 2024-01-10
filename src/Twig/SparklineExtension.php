@@ -40,6 +40,18 @@ class SparklineExtension extends AbstractExtension
             $data = $sampledData;
             $sparkline->setWidth(max(80, 2 * count($data) + 20));
         }
+
+        // optimize data visualization by shifting data down; has effect of smaller y-axis range
+        // and therefore magnified view of data
+        $dataMax = max($data);
+        $dataMin = min($data);
+        if (0.20 * $dataMax > 20) {
+            $offset = (max(0, $dataMin - 0.10 * $dataMax));
+            for ($i = 0; $i < count($data); ++$i) {
+                $data[$i] -= $offset;
+            }
+        }
+
         $sparkline->setData($data);
 
         $sparkline->display();
