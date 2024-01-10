@@ -21,13 +21,26 @@ class SparklineExtension extends AbstractExtension
     {
         ob_start();
         $sparkline = new Sparkline();
-        $sparkline->setData($data);
         if ($width) {
             $sparkline->setWidth($width);
         }
         if ($height) {
             $sparkline->setHeight($height);
         }
+
+        // if data length * 2 > width + 20, then data gets truncated.
+        // address this by sampling every other data point, and setting min width of plot
+        $data_len = count($data);
+        if ($data_len * 2 + 20 > $width) {
+            $sampledData = [];
+            $dataToSample = array_values($data);
+            for ($i = 0; $i < $data_len; $i += 2) {
+                $sampledData[] = $dataToSample[$i];
+            }
+            $data = $sampledData;
+            $sparkline->setWidth(max(80, 2 * count($data) + 20));
+        }
+        $sparkline->setData($data);
 
         $sparkline->display();
         $sparkline->destroy();
