@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=8.2",
-        "davaxi/sparkline": "^2.2",
+        "davaxi/sparkline": "dev-patch-1",
         "symfony/http-kernel": "^6.0 || ^7.0",
         "symfony/dependency-injection": "^6.0 || ^7.0",
         "symfony/config": "^6.0 || ^7.0",
@@ -29,7 +29,12 @@
         "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0 || ^7.0",
         "nyholm/symfony-bundle-test": "^1.6.1"
     },
-    "autoload": {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sgiehl/Sparkline.git"
+        }
+    ],    "autoload": {
         "psr-4": {
             "OncologySupport\\Sparkline\\": "src/"
         }
