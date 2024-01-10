@@ -34,7 +34,8 @@
             "type": "vcs",
             "url": "https://github.com/sgiehl/Sparkline.git"
         }
-    ],    "autoload": {
+    ],
+    "autoload": {
         "psr-4": {
             "OncologySupport\\Sparkline\\": "src/"
         }
