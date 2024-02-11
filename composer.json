@@ -17,7 +17,12 @@
     "require": {
         "php": ">=8.2",
         "davaxi/sparkline": "^2.2",
-        "twig/twig": "^2.10 || ^3.0"
+        "twig/twig": "^2.10 || ^3.0",
+        "symfony/http-kernel": "^6.0 || ^7.0",
+        "symfony/yaml": "^6.0 || ^7.0",
+        "symfony/dependency-injection": "^6.0 || ^7.0",
+        "symfony/config": "^6.0 || ^7.0",
+        "symfony/flex": "^2.4"
     },
     "autoload": {
         "psr-4": {
@@ -35,6 +40,9 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "scripts": {
         "auto-scripts": {
