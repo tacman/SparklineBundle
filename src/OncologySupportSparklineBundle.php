@@ -2,17 +2,13 @@
 
 namespace OncologySupport\Sparkline;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
  * Class SparklineBundle.
  *
  * @author Ernest Hymel
  */
-class OncologySupportSparklineBundle extends Bundle
+class OncologySupportSparklineBundle extends AbstractBundle
 {
-    public function getPath(): string
-    {
-        return \dirname(__DIR__);
-    }
 }
