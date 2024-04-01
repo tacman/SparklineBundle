@@ -72,3 +72,20 @@ will insert a sparkline image like so:
 In the future I may add the ability to pass options to modify the appearance of the graph.
 
 Enjoy!
+
+### Quick Demo
+
+```bash
+symfony new sparkline-demo --webapp && cd sparkline-demo
+composer require oncology-support/sparkline-bundle
+bin/console make:controller App
+cat <<'EOF' > templates/app/index.html.twig
+{% extends 'base.html.twig' %}
+{% block body %}
+{{ sparkline([2,3,10,8,23,14,9,12,0,0,14])|raw }}
+{% endblock %}
+EOF
+symfony server:start -d
+symfony open:local --path=/app
+```
+
